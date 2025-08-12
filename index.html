@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hello World Showcase - A modern React application demonstrating beautiful UI components, layouts, and interactive elements" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hello World Showcase" />
+    <meta property="og:description" content="A modern React application showcasing beautiful UI components and design patterns" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hello World Showcase" />
+    <meta name="twitter:description" content="A modern React application showcasing beautiful UI components and design patterns" />
+    <meta name="twitter:image" content="/twitter-image.png" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts - Inter for modern typography -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+      rel="stylesheet"
+    />
+    
+    <!-- Favicon variations for different devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3b82f6" />
+    
+    <!-- Title -->
+    <title>Hello World Showcase | Modern React UI Components</title>
+    
+    <!-- Inline critical CSS for performance -->
+    <style>
+      /* Critical CSS for immediate rendering */
+      * {
+        box-sizing: border-box;
+      }
+      
+      html {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #1a202c;
+        overflow-x: hidden;
+      }
+      
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+          color: #f7fafc;
+        }
+      }
+      
+      /* Loading spinner for initial load */
+      .loading-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 9999;
+      }
+      
+      @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      
+      /* Hide spinner once app loads */
+      .app-loaded .loading-spinner {
+        display: none;
+      }
+      
+      /* Focus styles for accessibility */
+      *:focus {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+      
+      /* Reduced motion support */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+      
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        body {
+          background: white;
+          color: black;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+          body {
+            background: black;
+            color: white;
+          }
+        }
+      }
+      
+      /* Print styles */
+      @media print {
+        body {
+          background: white !important;
+          color: black !important;
+        }
+        
+        .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/vite.svg" as="image" type="image/svg+xml" />
+  </head>
+  
+  <body class="antialiased">
+    <!-- Skip to main content for accessibility -->
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:no-underline"
+    >
+      Skip to main content
+    </a>
+    
+    <!-- Loading spinner -->
+    <div class="loading-spinner" aria-label="Loading application"></div>
+    
+    <!-- React root element -->
+    <div id="root" class="min-h-screen">
+      <!-- Fallback content for when JavaScript is disabled -->
+      <noscript>
+        <div class="flex items-center justify-center min-h-screen p-4">
+          <div class="max-w-md mx-auto text-center bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+            <h1 class="text-2xl font-bold text-gray-900 mb-4">JavaScript Required</h1>
+            <p class="text-gray-600 mb-6">
+              This application requires JavaScript to run. Please enable JavaScript in your browser to continue.
+            </p>
+            <div class="space-y-2 text-sm text-gray-500">
+              <p><strong>Chrome/Edge:</strong> Settings → Privacy and Security → Site Settings → JavaScript</p>
+              <p><strong>Firefox:</strong> about:config → javascript.enabled → true</p>
+              <p><strong>Safari:</strong> Preferences → Security → Enable JavaScript</p>
+            </div>
+          </div>
+        </div>
+      </noscript>
+    </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      // Register service worker for PWA functionality
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+      
+      // Performance monitoring
+      window.addEventListener('load', () => {
+        if ('performance' in window) {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+        }
+      });
+      
+      // Theme detection and application
+      (function() {
+        const theme = localStorage.getItem('theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+        
+        // Listen for theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+          }
+        });
+      })();
+      
+      // Error handling for uncaught errors
+      window.addEventListener('error', (event) => {
+        console.error('Global error:', event.error);
+      });
+      
+      window.addEventListener('unhandledrejection', (event) => {
+        console.error('Unhandled promise rejection:', event.reason);
+      });
+    </script>
+    
+    <!-- Main application script -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
